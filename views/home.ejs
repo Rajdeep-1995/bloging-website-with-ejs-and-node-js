@@ -1,0 +1,16 @@
+<%- include('partials/header'); -%>
+<h1>HOME</h1>
+<p><%= homeContent %></p>
+<% for(i=0;i<blog.length;i++){ %>
+    <h3><%= blog[i].title %></h3>
+
+    <p><%= blog[i].body.slice(0,100) %> ... <a href="/posts/<%= blog[i].id %>">Read more</a></p>
+
+    <form action="/delete" method="post">
+        <button class="delete" name="deleteID" value="<%= blog[i].id %>">Delete the post</button>
+    </form>
+<%}%>
+<div class="loader-wrapper">
+    <span class="loader"><span class="loader-inner"></span></span>
+</div>
+<%- include('partials/footer'); -%>
