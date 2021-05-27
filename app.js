@@ -7,7 +7,7 @@ const loadash = require("lodash");
 const mongoose = require("mongoose");
 const { constant } = require("lodash");
 mongoose.connect(
-  "mongodb+srv://admin-Rajdeep:R@jdeep001@cluster0.trzpo.mongodb.net/test",
+ env.mongooseUrl,
   { useNewUrlParser: true, useUnifiedTopology: true }
 );
 
